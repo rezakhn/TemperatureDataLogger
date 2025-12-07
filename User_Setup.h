@@ -1,16 +1,16 @@
-// ST7796 3.5" ESP32-035 Display Setup
+// ST7796 3.5" ESP32-035 Display Setup for LVGL
 #define USER_SETUP_ID 123
 
 #define ST7796_DRIVER
 
-#define TFT_WIDTH  320
-#define TFT_HEIGHT 480
+#define TFT_WIDTH  480
+#define TFT_HEIGHT 320
 
 #define TFT_MOSI 13
-#define TFT_SCK 14
+#define TFT_SCLK 14  // Changed from SCK to SCLK
 #define TFT_CS   15
 #define TFT_DC   2
-#define TFT_RST  4
+#define TFT_RST  12  // Changed from 4 to 12 for ESP32-035
 
 #define TFT_BL 5  // Display backlight control pin
 
@@ -24,11 +24,8 @@
 
 #define SMOOTH_FONT
 
-// #define SPI_FREQUENCY  27000000
-#define SPI_FREQUENCY  40000000
-
+#define SPI_FREQUENCY  27000000
 #define SPI_READ_FREQUENCY  20000000
-
 #define SPI_TOUCH_FREQUENCY  2500000
 
 // XPT2046 Touch configuration
